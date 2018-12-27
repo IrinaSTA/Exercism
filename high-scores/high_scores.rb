@@ -9,7 +9,7 @@ class HighScores
   end
 
   def latest
-    scores[-1]
+    scores.last
   end
 
   def personal_best
@@ -17,21 +17,14 @@ class HighScores
   end
 
   def personal_top
-    sorted_scores = scores.sort
-    personal_top = []
-    n = -1
-    number_of_top_scores.times do
-      personal_top << sorted_scores[n]
-      n -= 1
-    end
-    return personal_top
+    scores.max(3)
   end
 
   def report
     if new_personal_best
-      return "Your latest score was #{latest}. That's your personal best!"
+      report_latest + " That's your personal best!"
     else
-      return "Your latest score was #{latest}. That's #{diff_pb_latest} short of your personal best!"
+      report_latest + " That's #{diff_pb_latest} short of your personal best!"
     end
   end
 
@@ -47,6 +40,10 @@ class HighScores
 
   def number_of_top_scores
     scores.length >= 3 ? 3 : scores.length
+  end
+
+  def report_latest
+    "Your latest score was #{latest}."
   end
 
 end

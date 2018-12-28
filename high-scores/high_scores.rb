@@ -21,29 +21,25 @@ class HighScores
   end
 
   def report
-    if new_personal_best
-      report_latest + " That's your personal best!"
-    else
-      report_latest + " That's #{diff_pb_latest} short of your personal best!"
-    end
+    "Your latest score was #{latest}. #{offer_encouragement}"
   end
 
   private
 
+  def offer_encouragement
+    if new_personal_best
+      "That's your personal best!"
+    else
+      "That's #{diff_pb_latest} short of your personal best!"
+    end
+  end
+
   def new_personal_best
-    true if latest == personal_best
+    latest == personal_best
   end
 
   def diff_pb_latest
     personal_best - latest
-  end
-
-  def number_of_top_scores
-    scores.length >= 3 ? 3 : scores.length
-  end
-
-  def report_latest
-    "Your latest score was #{latest}."
   end
 
 end

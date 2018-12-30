@@ -31,9 +31,4 @@ class RunLengthEncoding
     input.partition(get_block(input))[1, 2]
   end
 
-# returns rest of string
-  def self.return_to_do(input)
-    self.partition_in_two(input)[1]
-  end
-
 end

@@ -8,14 +8,7 @@ class RunLengthEncoding
     output
   end
 
-  def self.get_first_block(input)
-    first_letter = input.chars.first
-    input.scan(/\A#{first_letter}+/)[0]
-  end
-
-  def self.partition_in_two(input)
-    input.partition(get_first_block(input))[1, 2]
-  end
+  private
 
   def self.break_into_blocks(input)
     blocks = []
@@ -33,6 +26,15 @@ class RunLengthEncoding
     else
       "#{block.length}#{block[0]}"
     end
+  end
+
+  def self.get_first_block(input)
+    first_letter = input.chars.first
+    input.scan(/\A#{first_letter}+/)[0]
+  end
+
+  def self.partition_in_two(input)
+    input.partition(get_first_block(input))[1, 2]
   end
 
 end

@@ -19,16 +19,13 @@ class RunLengthEncoding
     output
   end
 
-# returns string of first block of letters in input string
-  def self.get_block(input)
+  def self.get_first_block(input)
     first_letter = input.chars.first
     input.scan(/\A#{first_letter}+/)[0]
   end
 
-# partition strings into "", block and everything after the block
-# returns block and everything after the block
   def self.partition_in_two(input)
-    input.partition(get_block(input))[1, 2]
+    input.partition(get_first_block(input))[1, 2]
   end
 
 end

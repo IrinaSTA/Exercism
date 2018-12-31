@@ -30,7 +30,7 @@ class HighScores
     if new_personal_best?
       "That's your personal best!"
     else
-      "That's #{points_pb_vs_latest} short of your personal best!"
+      "That's #{pers_best_vs_latest} short of your personal best!"
     end
   end
 
@@ -38,7 +38,7 @@ class HighScores
     latest == personal_best
   end
 
-  def points_pb_vs_latest
+  def pers_best_vs_latest
     personal_best - latest
   end
 

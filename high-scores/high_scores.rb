@@ -27,18 +27,18 @@ class HighScores
   private
 
   def offer_encouragement
-    if new_personal_best
+    if new_personal_best?
       "That's your personal best!"
     else
-      "That's #{diff_pb_latest} short of your personal best!"
+      "That's #{points_pb_vs_latest} short of your personal best!"
     end
   end
 
-  def new_personal_best
+  def new_personal_best?
     latest == personal_best
   end
 
-  def diff_pb_latest
+  def points_pb_vs_latest
     personal_best - latest
   end
 

@@ -20,14 +20,12 @@ class Matrix
   def get_columns(matrix)
     rows = @rows
     columns = []
-    index = 0
-    for each in 1..rows[0].length do
+    for index in rows[0].each_index do
       column = []
       for row in rows do
         column << row[index]
       end
       columns << column
-      index += 1
     end
     columns
   end

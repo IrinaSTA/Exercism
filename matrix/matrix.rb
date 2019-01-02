@@ -3,9 +3,11 @@ class Matrix
   attr_reader :rows, :columns
 
   def initialize(matrix)
-    @rows = self.get_rows(matrix)
-    @columns = self.get_columns(matrix)
+    @rows = get_rows(matrix)
+    @columns = get_columns(matrix)
   end
+
+  private
 
   def get_rows(matrix)
     rows = matrix.split("\n").map!{|str_row| str_row.split(" ")}
@@ -18,8 +20,8 @@ class Matrix
   def get_columns(matrix)
     rows = @rows
     columns = []
+    index = 0
     for each in 1..rows[0].length do
-      index = 0
       column = []
       for row in rows do
         column << row[index]

@@ -8,15 +8,12 @@ class Matrix
   end
 
   private
-
+# split this up into smaller methods?
   def get_rows(matrix)
-    rows = matrix.split("\n").map!{|str_row| str_row.split(" ")}
-    for row in rows do
-      row.map!{|str| str.to_i}
-    end
-    rows
+    matrix.split("\n").map!{|str_row| str_row.split(" ").map!{|str| str.to_i}}
   end
 
+# this method is hard to follow
   def get_columns(matrix)
     rows = @rows
     columns = []

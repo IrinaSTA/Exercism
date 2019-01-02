@@ -18,13 +18,18 @@ class Matrix
     rows = @rows
     columns = []
     for index in rows[0].each_index do
-      column = []
-      for row in rows do
-        column << row[index]
-      end
-      columns << column
+      columns << get_column(index)
     end
     columns
+  end
+
+  def get_column(index)
+    rows = @rows
+    column = []
+    for row in rows do
+      column << row[index]
+    end
+    column
   end
 
 end

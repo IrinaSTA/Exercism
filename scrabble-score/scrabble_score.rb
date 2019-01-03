@@ -16,6 +16,10 @@ class Scrabble
     @word = word.upcase
   end
 
+  def self.score(word)
+    Scrabble.new(word).score
+  end
+
   def score
     score = 0
     for each in letters

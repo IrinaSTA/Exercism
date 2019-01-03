@@ -10,7 +10,7 @@ class Matrix
   private
 
   def get_rows(matrix)
-    matrix.lines.map{|str_row| str_row.split.map!(&:to_i)}
+    matrix.lines.map{|str_row| str_row.split.map(&:to_i)}
   end
 
   def get_columns(matrix)

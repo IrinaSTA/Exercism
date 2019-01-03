@@ -12,8 +12,8 @@ class Scrabble
     @@dictionary
   end
 
-  def initialize(word)
-    @word = word.upcase
+  def initialize(word = nil)
+    @word = word.upcase if word
   end
 
   def self.score(word)
@@ -21,6 +21,10 @@ class Scrabble
   end
 
   def score
+    word ? score_word : 0
+  end
+
+  def score_word
     score = 0
     for each in letters
       score += score_letter(each)

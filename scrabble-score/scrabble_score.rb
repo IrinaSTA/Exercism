@@ -33,7 +33,7 @@ class Scrabble
   end
 
   def letters
-    word.split(//) if word
+    word.scan(/[A-Z]/)
   end
 
   def score_letter(letter)

@@ -7,7 +7,7 @@ class Robot
   end
 
   def reset
-    @name = ''
+    @name = create_name
   end
 
   def self.forget

@@ -41,7 +41,7 @@ class RobotTest < Minitest::Test
   end
 
   def test_reset_multiple_times
-    skip
+    # skip
     robot = Robot.new
     names = []
     5.times do

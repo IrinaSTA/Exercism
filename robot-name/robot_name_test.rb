@@ -26,7 +26,7 @@ class RobotTest < Minitest::Test
   end
 
   def test_reset_changes_name
-    skip
+    # skip
     robot = Robot.new
     original_name = robot.name
     robot.reset

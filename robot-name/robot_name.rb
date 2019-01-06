@@ -6,6 +6,10 @@ class Robot
     @name = create_name
   end
 
+  def reset
+    @name = ''
+  end
+
   def self.forget
   end
 

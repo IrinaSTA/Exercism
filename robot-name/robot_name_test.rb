@@ -34,7 +34,7 @@ class RobotTest < Minitest::Test
   end
 
   def test_reset_before_name_called_does_not_cause_an_error
-    skip
+    # skip
     robot = Robot.new
     robot.reset
     assert_match NAME_REGEXP, Robot.new.name

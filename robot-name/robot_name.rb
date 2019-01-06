@@ -14,8 +14,8 @@ class Robot
   end
 
   def create_name
-    random_letter + random_letter + "#{random_number}" + "#{random_number}" +
-    "#{random_number}"
+    2.times.collect{random_letter}.join +
+    3.times.collect{random_number}.join
   end
 
   LETTERS = ('A'..'Z').to_a

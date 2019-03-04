@@ -4,27 +4,31 @@ class Luhn
     @number = number
   end
 
+  def number
+    @number
+  end
+
   def self.valid?(number)
     luhn = Luhn.new(number)
     luhn.valid?(number)
   end
 
   def valid?(number)
-    return false unless self.valid_length?(number) &&
-    self.all_valid_chars?(number)
+    return false unless self.valid_length? &&
+    self.all_valid_chars?
 
-    self.luhn_sum(number) % 10 == 0
+    self.luhn_sum % 10 == 0
   end
 
-  def valid_length?(number)
+  def valid_length?
     number.scan(/\d/).length > 1
   end
 
-  def all_valid_chars?(number)
+  def all_valid_chars?
     (number.scan(/\D/) - number.scan(/\s/)).empty?
   end
 
-  def luhn_sum(number)
+  def luhn_sum
     number.
     reverse.
     scan(/\d/).
@@ -38,7 +42,5 @@ class Luhn
     result = digit * 2
     result >= 10 ? result - 9 : result
   end
-
-  # private_class_method :valid_length?, :all_valid_chars?, :luhn?, :luhn_sum, :double_luhn_digit
 
 end

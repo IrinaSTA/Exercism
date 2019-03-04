@@ -4,9 +4,9 @@ require_relative 'robot_name'
 class RobotTest < Minitest::Test
   NAME_REGEXP = /^[A-Z]{2}\d{3}$/
 
-  def setup
-    Robot.forget
-  end
+  # def setup
+  #   Robot.forget
+  # end
 
   def test_can_create_a_robot
     # skip
@@ -72,7 +72,7 @@ class RobotTest < Minitest::Test
   end
 
   def test_generate_all_robots
-    skip
+    # skip
     all_names_count = 26 * 26 * 1000
     time_limit = Time.now + 60 # seconds
     seen_names = Hash.new(0)
